@@ -22,9 +22,9 @@ class Emitter {
       if (!_events.has(type)) {
         _events.set(type, new Map())
       }
-      let key = Symbol(type)
-      _events.get(type).set(key, listener)
-      return key
+      let ticket = Symbol(type)
+      _events.get(type).set(ticket, listener)
+      return ticket
     }
 
     return false
